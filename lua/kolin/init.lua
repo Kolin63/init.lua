@@ -1,3 +1,3 @@
 require("kolin.set")
 require("kolin.remap")
-require("kolin.lazy")
+require("kolin.init_lazy")
