@@ -48,7 +48,7 @@ return {
                 zls = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.zls.setup({
-                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
+                        root_dir = lspconfig.util.root_pattern(root_files),
                         settings = {
                             zls = {
                                 enable_inlay_hints = true,
