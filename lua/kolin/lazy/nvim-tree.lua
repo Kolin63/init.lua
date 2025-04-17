@@ -30,8 +30,9 @@ return {
             },
             actions = {
                 open_file = {
-                    quit_on_open = true
-                }
+                    eject = false,
+                    quit_on_open = true,
+                },
             },
             view = {
                 width = 45,
