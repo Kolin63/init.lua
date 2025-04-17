@@ -1,10 +1,11 @@
 -- Leader pv does explore
-vim.keymap.set("n", "<leader>pv", ":NvimTreeFindFile<CR>")
+vim.keymap.set("n", "<leader>pv", function() require('nvim-tree.api').tree.find_file() end)
 
 -- Tab Remaps
 vim.keymap.set("n", "<C-t>", function()
     vim.cmd.tabnew()
     require('nvim-tree.api').tree.open({ current_window = true })
+    require('telescope.builtin').find_files()
 end)
 
 vim.keymap.set("n", "<Tab>", vim.cmd.tabn)
