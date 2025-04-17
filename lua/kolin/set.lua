@@ -30,3 +30,6 @@ vim.opt.bg = dark
 
 -- Faster Update Times
 vim.opt.updatetime = 50
+
+-- Netrw LSD Emojis
+vim.g.netrw_list_cmd = 'lsd'

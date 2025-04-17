@@ -1,5 +1,5 @@
 -- Leader pv does explore
-vim.keymap.set("n", "<leader>pv", function() vim.cmd("Ex") end)
+vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen)
 
 -- Scrolling Remap
 vim.keymap.set("n", "<C-k>", "<C-y>k")
