@@ -1,5 +1,5 @@
 local root_files = {
-  '.git',
+    '.git',
 }
 
 return {
@@ -13,8 +13,6 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        "L3MON4D3/LuaSnip",
-        "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
     },
 
@@ -31,92 +29,104 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
-        require("fidget").setup({})
-        require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "lua_ls",
-                "clangd",
-            },
-            handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
-                end,
+            require("fidget").setup({})
+            require("mason").setup()
+            require("mason-lspconfig").setup({
+                ensure_installed = {
+                    "lua_ls",
+                    "clangd",
+                    "jsonls",
+                },
+                handlers = {
+                    function(server_name) -- default handler (optional)
+                        require("lspconfig")[server_name].setup {
+                            capabilities = capabilities
+                        }
+                    end,
 
-                zls = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.zls.setup({
-                        root_dir = lspconfig.util.root_pattern(root_files),
-                        settings = {
-                            zls = {
-                                enable_inlay_hints = true,
-                                enable_snippets = true,
-                                warn_style = true,
-                            },
-                        },
-                    })
-                    vim.g.zig_fmt_parse_errors = 0
-                    vim.g.zig_fmt_autosave = 0
-
-                end,
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                format = {
-                                    enable = true,
-                                    -- Put format options here
-                                    -- NOTE: the value should be STRING!!
-                                    defaultConfig = {
-                                        indent_style = "space",
-                                        indent_size = "2",
-                                    }
+                    zls = function()
+                        local lspconfig = require("lspconfig")
+                        lspconfig.zls.setup({
+                            root_dir = lspconfig.util.root_pattern(root_files),
+                            settings = {
+                                zls = {
+                                    enable_inlay_hints = true,
+                                    warn_style = true,
                                 },
+                            },
+                        })
+                        vim.g.zig_fmt_parse_errors = 0
+                        vim.g.zig_fmt_autosave = 0
+
+                    end,
+                    ["lua_ls"] = function()
+                        local lspconfig = require("lspconfig")
+                        lspconfig.lua_ls.setup {
+                            capabilities = capabilities,
+                            settings = {
+                                Lua = {
+                                    format = {
+                                        enable = true,
+                                        -- Put format options here
+                                        -- NOTE: the value should be STRING!!
+                                        defaultConfig = {
+                                            indent_style = "space",
+                                            indent_size = "2",
+                                        }
+                                    },
+                                }
                             }
                         }
-                    }
-                end,
-            }
-        })
+                    end,
+                    ["clangd"] = function ()
+                        local lspconfig = require("lspconfig")
+                        lspconfig.clangd.setup {
+                            capabilities = {
+                                offsetEncoding = { "utf-8", "utf-16" },
+                                textDocument = {
+                                    completion = {
+                                        editsNearCursor = true
+                                    }
+                                }
+                            },
+                            filetypes = { "c", "cpp", "objc", "objcpp" },
+                        }
+                    end,
+                    ["jsonls"] = function ()
+                        local lspconfig = require("lspconfig")
+                        lspconfig.jsonls.setup {}
+                    end
+                    },
+                })
 
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
+                local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
-        cmp.setup({
-            snippet = {
-                expand = function(args)
-                    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-                end,
-            },
-            mapping = cmp.mapping.preset.insert({
-                ['<C-j>'] = cmp.mapping.select_prev_item(cmp_select),
-                ['<C-k>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-l>'] = cmp.mapping.confirm({ select = true }),
-                ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-                ["<C-Space>"] = cmp.mapping.complete(),
-            }),
-            sources = cmp.config.sources({
-                { name = "copilot", group_index = 2 },
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' }, -- For luasnip users.
-            }, {
-                { name = 'buffer' },
-            })
-        })
+                cmp.setup({
+                    mapping = cmp.mapping.preset.insert({
+                        ['<C-j>'] = cmp.mapping.select_prev_item(cmp_select),
+                        ['<C-k>'] = cmp.mapping.select_next_item(cmp_select),
+                        ['<C-l>'] = cmp.mapping.confirm({ select = true }),
+                        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+                        ["<C-f>"] = cmp.mapping.complete(),
+                    }),
+                    sources = cmp.config.sources({
+                        { name = 'nvim_lsp' },
+                    }, {
+                        { name = 'buffer' },
+                    })
+                })
 
-        vim.diagnostic.config({
-            -- update_in_insert = true,
-            float = {
-                focusable = false,
-                style = "minimal",
-                border = "rounded",
-                source = "always",
-                header = "",
-                prefix = "",
-            },
-        })
-    end
-}
+                vim.diagnostic.config({
+                    -- update_in_insert = true,
+                    float = {
+                        focusable = false,
+                        style = "minimal",
+                        border = "rounded",
+                        source = "always",
+                        header = "",
+                        prefix = "",
+                    },
+                })
+            end
+        }
+

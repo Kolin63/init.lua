@@ -1,6 +1,11 @@
 return {
     'nvim-tree/nvim-tree.lua',
 
+    opts = {
+        hijack_cursor = true,
+        update_focused_file = true,
+    },
+
     config = function ()
         -- disable netrw at the very start of your init.lua
         vim.g.loaded_netrw = 1
@@ -9,8 +14,8 @@ return {
         -- optionally enable 24-bit colour
         vim.opt.termguicolors = true
 
-        -- empty setup using defaults
-        require("nvim-tree").setup()
+        -- open in working directory
+        vim.g.nvim_tree_respect_buf_cwd = 1
 
         -- OR setup with some options
         require("nvim-tree").setup({
@@ -29,7 +34,9 @@ return {
                 }
             },
             view = {
-                width = 45
+                width = 45,
+                number = true,
+                relativenumber = true
             }
         }) 
     end
