@@ -55,7 +55,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<S-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
                 ['<S-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-                ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                ['<S-l>'] = cmp.mapping.confirm({ select = true }),
                 ['<Tab>'] = cmp.mapping.confirm({ select = true }),
             }),
         })
