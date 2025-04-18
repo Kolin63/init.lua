@@ -12,8 +12,8 @@ vim.keymap.set("n", "<Tab>", vim.cmd.tabn)
 vim.keymap.set("n", "<S-Tab>", vim.cmd.tabp)
 
 -- Scrolling Remap
-vim.keymap.set("n", "<C-k>", "<C-y>k")
-vim.keymap.set("n", "<C-j>", "<C-e>j")
+vim.keymap.set("n", "<M-k>", "2<C-y>2k")
+vim.keymap.set("n", "<M-j>", "2<C-e>2j")
 
 -- Leader Y Goes to System Clipboard
 -- + Register is System Clipboard
