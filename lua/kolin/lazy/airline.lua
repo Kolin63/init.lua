@@ -11,5 +11,7 @@ return {
 
         vim.api.nvim_set_var('airline_left_sep', '')
         vim.api.nvim_set_var('airline_right_sep', '')
+
+        vim.api.nvim_set_var('airline#extensions#tabline#enabled', 1)
     end
 }
