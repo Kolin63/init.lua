@@ -46,3 +46,10 @@ vim.keymap.set("n", "D", "dd")
 vim.keymap.set("n", "Y", "yy")
 -- Big C to cc
 vim.keymap.set("n", "C", "cc")
+
+-- Dont start new lines with comments
+vim.keymap.set("i", "<CR>", "<CR><Esc>cc")
+vim.keymap.set("n", "o", "o<Esc>cc")
+vim.keymap.set("n", "O", "O<Esc>cc")
+-- ...but do with Alt-Enter
+vim.keymap.set("i", "<M-CR>", "<CR>")
