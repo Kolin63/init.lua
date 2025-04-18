@@ -44,21 +44,6 @@ return {
                         }
                     end,
 
-                    zls = function()
-                        local lspconfig = require("lspconfig")
-                        lspconfig.zls.setup({
-                            root_dir = lspconfig.util.root_pattern(root_files),
-                            settings = {
-                                zls = {
-                                    enable_inlay_hints = true,
-                                    warn_style = true,
-                                },
-                            },
-                        })
-                        vim.g.zig_fmt_parse_errors = 0
-                        vim.g.zig_fmt_autosave = 0
-
-                    end,
                     ["lua_ls"] = function()
                         local lspconfig = require("lspconfig")
                         lspconfig.lua_ls.setup {
@@ -81,21 +66,9 @@ return {
                     ["clangd"] = function ()
                         local lspconfig = require("lspconfig")
                         lspconfig.clangd.setup {
-                            capabilities = {
-                                offsetEncoding = { "utf-8", "utf-16" },
-                                textDocument = {
-                                    completion = {
-                                        editsNearCursor = true
-                                    }
-                                }
-                            },
-                            filetypes = { "c", "cpp", "objc", "objcpp" },
+                            capabilities = capabilities,
                         }
                     end,
-                    ["jsonls"] = function ()
-                        local lspconfig = require("lspconfig")
-                        lspconfig.jsonls.setup {}
-                    end
                     },
                 })
 
