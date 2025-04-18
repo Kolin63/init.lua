@@ -1,12 +1,10 @@
 -- Leader pv does explore
-vim.keymap.set("n", "<leader>pv", function() 
-    require('nvim-tree.api').tree.open({ find_file = true }) 
-end)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Tab Remaps
 vim.keymap.set("n", "<C-t>", function()
     vim.cmd.tabnew()
-    require('nvim-tree.api').tree.open({ current_window = true })
+    vim.cmd.Ex()
     require('telescope.builtin').find_files()
 end)
 
@@ -35,14 +33,16 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Split Remaps (M is alt, better as right alt)
 vim.keymap.set("n", "<M-s>", function ()
     vim.cmd.split()
-    require('nvim-tree.api').tree.open({ current_window = true })
+    vim.cmd.Ex()
 end)
 vim.keymap.set("n", "<M-v>", function () 
     vim.cmd.vsplit()
-    require('nvim-tree.api').tree.open({ current_window = true })
+    vim.cmd.Ex()
 end)
 
 -- Big D to dd
 vim.keymap.set("n", "D", "dd")
 -- Big Y to yy
 vim.keymap.set("n", "Y", "yy")
+-- Big C to cc
+vim.keymap.set("n", "C", "cc")
