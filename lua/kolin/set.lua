@@ -1,7 +1,3 @@
--- Leader
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 -- Line Numbers
 vim.opt.rnu = true
 vim.opt.number = true
@@ -39,4 +35,7 @@ vim.g.netrw_list_cmd = 'lsd'
 
 -- Note to Self: Ctrl-l disables search highlighting
 
-
+-- Cursor Line
+-- GRUVBOX!!!!!
+vim.opt.cursorline = true
+vim.cmd("highlight CursorLine guibg=#1d2021")
