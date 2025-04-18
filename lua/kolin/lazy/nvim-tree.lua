@@ -11,13 +11,12 @@ return {
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
 
-        -- optionally enable 24-bit colour
+        -- enable 24-bit colour
         vim.opt.termguicolors = true
 
         -- open in working directory
         vim.g.nvim_tree_respect_buf_cwd = 1
 
-        -- OR setup with some options
         require("nvim-tree").setup({
             sort = {
                 sorter = "case_sensitive",
@@ -26,7 +25,8 @@ return {
                 group_empty = true,
             },
             filters = {
-                dotfiles = true,
+                -- this means dotfiles __ARE__ visible
+                dotfiles = false,
             },
             actions = {
                 open_file = {

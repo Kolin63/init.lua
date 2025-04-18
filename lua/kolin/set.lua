@@ -6,6 +6,9 @@ vim.g.maplocalleader = "\\"
 vim.opt.rnu = true
 vim.opt.number = true
 
+-- Line Wrap
+vim.opt.wrap = false
+
 -- Tabs
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -33,3 +36,7 @@ vim.opt.updatetime = 50
 
 -- Netrw LSD Emojis
 vim.g.netrw_list_cmd = 'lsd'
+
+-- Note to Self: Ctrl-l disables search highlighting
+
+
