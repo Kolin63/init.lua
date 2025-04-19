@@ -33,9 +33,10 @@ vim.opt.updatetime = 50
 -- Netrw LSD Emojis
 vim.g.netrw_list_cmd = 'lsd'
 
--- Note to Self: Ctrl-l disables search highlighting
-
 -- Cursor Line
 -- GRUVBOX!!!!!
 vim.opt.cursorline = true
 vim.cmd("highlight CursorLine guibg=#1d2021")
+
+-- Color Column
+vim.opt.colorcolumn = "80"
