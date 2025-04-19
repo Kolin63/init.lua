@@ -15,7 +15,7 @@ vim.opt.smartindent = true
 -- Makes Undo Files in a seperate directory
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = "~/AppData/Local/nvim-data/undo/"
+vim.opt.undodir = "%USERPROFILE%/AppData/Local/nvim-data/undo/"
 vim.opt.undofile = true
 
 -- Splits
