@@ -40,3 +40,7 @@ vim.cmd("highlight CursorLine guibg=#1d2021")
 
 -- Color Column
 vim.opt.colorcolumn = "80"
+
+-- Dont start new lines with comments
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')

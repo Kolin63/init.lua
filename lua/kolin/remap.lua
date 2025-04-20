@@ -47,6 +47,5 @@ vim.keymap.set("n", "Y", "yy")
 -- Big C to cc
 vim.keymap.set("n", "C", "cc")
 
--- Dont start new lines with comments
-vim.cmd('autocmd BufEnter * set formatoptions-=cro')
-vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+-- Ctrl d deletes word in insert mode
+vim.keymap.set("i", "<C-d>", "<Esc>diwi")
