@@ -48,4 +48,4 @@ vim.keymap.set("n", "Y", "yy")
 vim.keymap.set("n", "C", "cc")
 
 -- Ctrl d deletes word in insert mode
-vim.keymap.set("i", "<C-d>", "<Esc>diwi")
+vim.keymap.set("i", "<C-d>", "<Esc>diwi ")
