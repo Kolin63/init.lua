@@ -2,7 +2,7 @@ return {
     'neovim/nvim-lspconfig',
 
     config = function ()
-        vim.keymap.set("n", "K", vim.lsp.buf.hover)
+        -- vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
         vim.lsp.enable('clangd')
         vim.lsp.config('clangd', {
