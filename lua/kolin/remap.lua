@@ -1,10 +1,10 @@
 -- Leader pv does explore
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", require('oil').open)
 
 -- Tab Remaps
 vim.keymap.set("n", "<C-t>", function()
     vim.cmd.tabnew()
-    vim.cmd.Ex()
+    require('oil').open()
     require('telescope.builtin').find_files()
 end)
 
@@ -33,11 +33,11 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Split Remaps (M is alt, better as right alt)
 vim.keymap.set("n", "<M-s>", function ()
     vim.cmd.split()
-    vim.cmd.Ex()
+    require('oil').open()
 end)
 vim.keymap.set("n", "<M-v>", function () 
     vim.cmd.vsplit()
-    vim.cmd.Ex()
+    require('oil').open()
 end)
 
 -- Big D to dd
