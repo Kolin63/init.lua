@@ -1,8 +1,17 @@
 return {
     'neovim/nvim-lspconfig',
 
+    dependencies = {
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+    },
+
     config = function ()
-        -- vim.keymap.set("n", "K", vim.lsp.buf.hover)
+        require('mason').setup()
+        require('mason-lspconfig').setup()
+
+        vim.keymap.set("n", "K", vim.lsp.buf.hover)
+        vim.keymap.set("n", "X", vim.diagnostic.open_float)
 
         vim.lsp.enable('clangd')
         vim.lsp.config('clangd', {
