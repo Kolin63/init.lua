@@ -39,6 +39,11 @@ vim.keymap.set("n", "<M-v>", function ()
     vim.cmd.vsplit()
     require('oil').open()
 end)
+vim.keymap.set("n", "<M-t>", function ()
+    vim.cmd.split()
+    vim.cmd.term()
+    vim.cmd.norm('A')
+end)
 
 -- Big D to dd
 vim.keymap.set("n", "D", "dd")
