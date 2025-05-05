@@ -15,9 +15,9 @@ return {
 
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
-                ['<C-j>'] = cmp.mapping.select_prev_item(cmp_select),
-                ['<C-k>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-l>'] = cmp.mapping.confirm({ select = true }),
+                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
                 ['<Tab>'] = cmp.mapping.confirm({ select = true }),
             }),
 
