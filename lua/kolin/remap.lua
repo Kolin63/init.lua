@@ -52,8 +52,11 @@ vim.keymap.set("n", "Y", "yy")
 -- Big C to cc
 vim.keymap.set("n", "C", "cc")
 
--- Ctrl d deletes word in insert mode
-vim.keymap.set("i", "<C-d>", "<Esc>diwi ")
+-- Alt d deletes word in insert mode
+vim.keymap.set("i", "<M-d>", "<Esc>diwi")
+
+-- Ctrl d maps to backspace in insert mode
+vim.keymap.set("i", "<C-d>", "<BS>")
 
 -- Ctrl Shift G Opens GitHub Repo in Web
 vim.keymap.set("n", "<C-G>", function() vim.cmd("silent exec \"!gh repo view --web\"") end)
