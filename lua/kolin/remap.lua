@@ -23,6 +23,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 -- Void Register Delete
 vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
+vim.keymap.set({ "n", "v" }, "<leader>D", "\"_dd")
 
 -- Get Rid of Q
 vim.keymap.set("n", "Q", "<nop>")
@@ -57,6 +58,10 @@ vim.keymap.set("i", "<M-d>", "<Esc>diwi")
 
 -- Ctrl d maps to backspace in insert mode
 vim.keymap.set("i", "<C-d>", "<BS>")
+
+-- Emacs controls (dont worry guys its ok)
+vim.keymap.set("i", "<C-f>", "<Esc>la")
+vim.keymap.set("i", "<C-b>", "<Esc>i")
 
 -- Ctrl Shift G Opens GitHub Repo in Web
 vim.keymap.set("n", "<C-G>", function() vim.cmd("silent exec \"!gh repo view --web\"") end)
