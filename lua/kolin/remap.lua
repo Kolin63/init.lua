@@ -61,7 +61,9 @@ vim.keymap.set("i", "<C-d>", "<BS>")
 
 -- Emacs controls (dont worry guys its ok)
 vim.keymap.set("i", "<C-f>", "<Esc>la")
+vim.keymap.set("n", "<C-f>", "l")
 vim.keymap.set("i", "<C-b>", "<Esc>i")
+vim.keymap.set("n", "<C-b>", "h")
 
 -- Ctrl Shift G Opens GitHub Repo in Web
 vim.keymap.set("n", "<C-G>", function() vim.cmd("silent exec \"!gh repo view --web\"") end)
