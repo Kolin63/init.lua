@@ -65,3 +65,9 @@ vim.keymap.set("i", "<C-b>", "<Esc>i")
 
 -- Ctrl Shift G Opens GitHub Repo in Web
 vim.keymap.set("n", "<C-G>", function() vim.cmd("silent exec \"!gh repo view --web\"") end)
+
+-- Auto Braces and Parentheses and stuff
+vim.keymap.set("i", "{", "{}<Esc>i")
+vim.keymap.set("i", "(", "()<Esc>i")
+vim.keymap.set("i", "\"", "\"\"<Esc>i")
+vim.keymap.set("i", "'", "''<Esc>i")
