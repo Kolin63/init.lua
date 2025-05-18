@@ -69,6 +69,7 @@ vim.keymap.set("n", "<C-G>", function() vim.cmd("silent exec \"!gh repo view --w
 -- Auto Braces and Parentheses and stuff
 vim.keymap.set("i", "{", "{}<Esc>i")
 vim.keymap.set("i", "(", "()<Esc>i")
+vim.keymap.set("i", "[", "[]<Esc>i")
 -- vim.keymap.set("i", "\"", "\"\"<Esc>i")
 -- vim.keymap.set("i", "'", "''<Esc>i")
 
