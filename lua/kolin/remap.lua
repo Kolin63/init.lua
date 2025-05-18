@@ -71,3 +71,6 @@ vim.keymap.set("i", "{", "{}<Esc>i")
 vim.keymap.set("i", "(", "()<Esc>i")
 vim.keymap.set("i", "\"", "\"\"<Esc>i")
 vim.keymap.set("i", "'", "''<Esc>i")
+
+-- Ctrl Z undo
+vim.keymap.set({ "i", "n" }, "<C-z>", "<Esc>ui")
