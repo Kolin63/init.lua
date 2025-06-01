@@ -14,6 +14,8 @@ vim.keymap.set("n", "<S-Tab>", vim.cmd.tabp)
 -- Scrolling Remap
 vim.keymap.set("n", "<M-k>", "2<C-y>2k")
 vim.keymap.set("n", "<M-j>", "2<C-e>2j")
+vim.keymap.set("n", "<C-y>", "2<C-y>")
+vim.keymap.set("n", "<C-e>", "2<C-e>")
 
 -- Leader Y Goes to System Clipboard
 -- + Register is System Clipboard
@@ -36,7 +38,7 @@ vim.keymap.set("n", "<M-s>", function ()
     vim.cmd.split()
     require('oil').open()
 end)
-vim.keymap.set("n", "<M-v>", function () 
+vim.keymap.set("n", "<M-v>", function ()
     vim.cmd.vsplit()
     require('oil').open()
 end)

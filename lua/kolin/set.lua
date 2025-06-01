@@ -44,3 +44,23 @@ vim.opt.colorcolumn = "80"
 -- Dont start new lines with comments
 vim.cmd('autocmd BufEnter * set formatoptions-=cro')
 vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+
+-- CMP toggles
+local cmp = require("cmp")
+vim.api.nvim_create_user_command("CmpOn", function() 
+  cmp.setup.buffer { enabled = true }
+  print("CMP enabled")
+end, {})
+vim.api.nvim_create_user_command("CmpOff", function() 
+  cmp.setup.buffer { enabled = false }
+  print("CMP disabled")
+end, {})
+
+-- Open Spellcheck File
+vim.api.nvim_create_user_command("SpellList", function()
+  vim.cmd("split")
+  local win = vim.api.nvim_get_current_win()
+  local buf = vim.api.nvim_create_buf(true, true)
+  vim.api.nvim_win_set_buf(win, buf)
+  vim.cmd("edit ~/.local/share/nvim/site/spell/en.utf-8.add")
+end, {})

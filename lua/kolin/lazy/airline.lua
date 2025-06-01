@@ -15,6 +15,6 @@ return {
         vim.api.nvim_set_var('airline#extensions#tabline#enabled', 1)
         vim.api.nvim_set_var('airline#extensions#tabline#show_buffers', 0)
 
-        vim.api.nvim_set_var('airline#extensions#tabline#left_sep', '')
+        vim.api.nvim_set_var('airline#extensions#tabline#left_sep', '')
     end
 }
