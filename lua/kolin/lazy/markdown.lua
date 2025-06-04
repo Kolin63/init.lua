@@ -1,5 +1,8 @@
 return {
   'MeanderingProgrammer/render-markdown.nvim',
+
+  enabled = false,
+
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'nvim-tree/nvim-web-devicons',
@@ -16,7 +19,7 @@ return {
     vim.api.nvim_set_hl(0, "@markup.heading.3.markdown", { fg = "#98971a" })
 
     require("render-markdown").setup({
-      render_modes = { 'n', 'c', 't', 'i', 'v' },
+      render_modes = { 'n', 'c', 't', 'i', 'v', 'V' },
 
       preset = "obsidian",
 

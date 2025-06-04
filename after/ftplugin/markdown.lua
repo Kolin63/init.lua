@@ -7,8 +7,8 @@ print("markdown config loaded!")
 -- vim.keymap.set("n", "$", "g$")
 
 -- force line break
-vim.opt.linebreak = true
-vim.opt.wrap = true
+-- vim.opt.linebreak = true
+-- vim.opt.wrap = true
 
 -- disable cmp because who needs that in markdown 
 require("cmp").setup.buffer { enabled = false }
