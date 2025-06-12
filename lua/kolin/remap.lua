@@ -10,6 +10,8 @@ end)
 
 vim.keymap.set("n", "<Tab>", vim.cmd.tabn)
 vim.keymap.set("n", "<S-Tab>", vim.cmd.tabp)
+vim.keymap.set({ 'n', 'i', 'v' }, "<PageUp>", vim.cmd.tabn)
+vim.keymap.set({ 'n', 'i', 'v' }, "<PageDown>", vim.cmd.tabp)
 
 -- Scrolling Remap
 vim.keymap.set("n", "<M-k>", "2<C-y>2k")
@@ -80,3 +82,13 @@ vim.keymap.set("i", "[", "[]<Esc>i")
 -- Ctrl Z undo
 vim.keymap.set("i", "<C-z>", "<Esc>ui")
 vim.keymap.set("n", "<C-z>", "<Esc>u")
+
+-- Get rid of arrow keys
+vim.keymap.set({ 'i', 'n', 'v' }, "<Up>", "<nop>")
+vim.keymap.set({ 'i', 'n', 'v' }, "<Down>", "<nop>")
+vim.keymap.set({ 'i', 'n', 'v' }, "<Left>", "<nop>")
+vim.keymap.set({ 'i', 'n', 'v' }, "<Right>", "<nop>")
+vim.keymap.set({ 'i', 'n', 'v' }, "<S-Up>", "<nop>")
+vim.keymap.set({ 'i', 'n', 'v' }, "<S-Down>", "<nop>")
+vim.keymap.set({ 'i', 'n', 'v' }, "<S-Left>", "<nop>")
+vim.keymap.set({ 'i', 'n', 'v' }, "<S-Right>", "<nop>")
